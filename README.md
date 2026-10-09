@@ -83,6 +83,23 @@ The `.md` files are plain static assets — you can also link them directly
   data (or converting and hand-polishing once) beats generic conversion.
   `generate_md.py` is a decent generic starting point — review its output.
 
+## Use it as an agent skill
+
+This repo doubles as an agent skill ([`skills/markdown-for-agents/SKILL.md`](skills/markdown-for-agents/SKILL.md)).
+Install it into your agent's skills folder and ask it to do the work for any site:
+
+```bash
+git clone https://github.com/wu736139669/markdown-for-agents-worker
+cp -r markdown-for-agents-worker/skills/markdown-for-agents ~/.claude/skills/   # or ~/.agents/skills/
+```
+
+Then prompt:
+
+> Make my site readable by AI agents — use the markdown-for-agents skill.
+
+Works with any agent that supports the SKILL.md convention (Claude Code,
+OpenCode, Cursor, Codex, Copilot, Windsurf and friends).
+
 ## Pair it with llms.txt
 
 Discovery matters as much as negotiation. Publish an [llms.txt](https://llmstxt.org)
