@@ -23,7 +23,7 @@ $ curl -s -H "Accept: text/markdown" https://toolpantry.app/emi-calculator | hea
 > Calculate monthly EMI, total interest, total payment, amortization, and prepayment savings...
 ```
 
-**Live example:** [toolpantry.app](https://toolpantry.app) — a 122-page static tools site
+**Live example:** [toolpantry.app](https://toolpantry.app) — a 160+ page static tools site
 using this exact setup.
 
 ## How it works
