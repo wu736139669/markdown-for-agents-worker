@@ -85,20 +85,28 @@ The `.md` files are plain static assets — you can also link them directly
 
 ## Use it as an agent skill
 
-This repo doubles as an agent skill ([`skills/markdown-for-agents/SKILL.md`](skills/markdown-for-agents/SKILL.md)).
-Install it into your agent's skills folder and ask it to do the work for any site:
+This repo ships two agent skills (SKILL.md convention):
+
+| Skill | Role |
+| --- | --- |
+| [`skills/markdown-for-agents`](skills/markdown-for-agents/SKILL.md) | **Fix** — implement llms.txt, `.md` versions, and content negotiation for a site |
+| [`skills/agent-ready-check`](skills/agent-ready-check/SKILL.md) | **Diagnose** — audit any deployed URL or local build (9-point score, per-item fixes) |
+
+Install both into your agent's skills folder:
 
 ```bash
 git clone https://github.com/wu736139669/markdown-for-agents-worker
 cp -r markdown-for-agents-worker/skills/markdown-for-agents ~/.claude/skills/   # or ~/.agents/skills/
+cp -r markdown-for-agents-worker/skills/agent-ready-check  ~/.claude/skills/
 ```
 
 Then prompt:
 
-> Make my site readable by AI agents — use the markdown-for-agents skill.
+> Check if my site is ready for AI agents, then fix the gaps.
 
 Works with any agent that supports the SKILL.md convention (Claude Code,
-OpenCode, Cursor, Codex, Copilot, Windsurf and friends).
+OpenCode, Cursor, Codex, Copilot, Windsurf and friends). Or use the hosted
+checker at https://toolpantry.app/agent-ready-checker.
 
 ## Pair it with llms.txt
 
