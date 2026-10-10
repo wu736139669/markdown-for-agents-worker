@@ -97,7 +97,7 @@ def check_remote(base):
     checks.append(('robots', ok, detail))
 
     for key, path in (('llms', '/llms.txt'), ('llmsfull', '/llms-full.txt')):
-        r, body = fetch(base + path)
+        r, body = fetch(base + path, timeout=45)
         ok = bool(r is not None and getattr(r, 'status', 200) == 200 and body.strip())
         checks.append((key, ok, f'{path} ' + ('found (' + str(len(body)) + ' bytes)' if ok else 'not found')))
 
